@@ -1,19 +1,250 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#17140F" />
-    <meta name="description" content="Homeboy Tar-Pave — Johannesburg's top-rated paving & tar surfacing contractor. 5.0 stars. Free site visits. Tar surfacing, brick paving, pothole repairs, driveways, parking lots. Serving Sandton, Randburg, Midrand & Joburg South." />
-    <title>Homeboy Tar-Pave | Johannesburg's #1 Paving & Tar Surfacing Contractor</title>
-    <meta property="og:title" content="Homeboy Tar-Pave | Johannesburg's #1 Paving & Tar Surfacing Contractor" />
-    <meta property="og:description" content="5.0-star rated paving & tar surfacing in Johannesburg. Free site visits, weed-free guarantee. Sandton, Randburg, Midrand, Joburg South." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homeboy Tar-Pave | Tar Surfacing & Brick Paving Johannesburg</title>
+    <meta name="description" content="5.0★ Tar Surfacing, Brick Paving, Pothole Repairs & Driveways in Johannesburg. Free quotes, heavy compaction, weed-free guarantee. Call 072 742 4595.">
+    <link rel="stylesheet" href="https://googleapis.com">
+    <style>
+        :root {
+            --tar-black: #17140F;
+            --asphalt: #2E2A24;
+            --concrete: #E8E2D4;
+            --sand-white: #F7F4EC;
+            --line-yellow: #E8A93B;
+            --clay-red: #B5502D;
+            --whatsapp-green: #25D366;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: 'Work Sans', sans-serif;
+            color: var(--tar-black);
+            background: var(--sand-white);
+            line-height: 1.6;
+            padding-bottom: 70px;
+        }
+        h1, h2, h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin-top: 0; }
+        .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+        header {
+            background: var(--tar-black);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--line-yellow);
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+        .brand {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .brand span { color: var(--line-yellow); }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover { color: var(--line-yellow); }
+        .nav-links .phone-nav {
+            background: var(--asphalt);
+            padding: 8px 16px;
+            border-radius: 4px;
+            color: var(--line-yellow);
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(23, 20, 15, 0.85), rgba(46, 42, 36, 0.9)), url('https://unsplash.com') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        .hero h1 span { color: var(--line-yellow); }
+        .hero .sub {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            font-weight: 500;
+            color: #e5e5e5;
+        }
+        .hero .badges {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            color: var(--line-yellow);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 36px;
+            background: var(--line-yellow);
+            color: var(--tar-black);
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-whatsapp {
+            background: var(--whatsapp-green);
+            color: white;
+        }
+
+        section { padding: 100px 0; }
+        .section-head { text-align: center; margin-bottom: 60px; }
+        .section-head h2 { font-size: 2.5rem; position: relative; display: inline-block; padding-bottom: 12px; }
+        .section-head h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--line-yellow);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            border-top: 5px solid var(--asphalt);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 16px; color: var(--tar-black); }
+        .service-card ul { padding-left: 20px; margin: 16px 0 0; }
+        .service-card li { margin-bottom: 8px; }
+
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .review-card { background: white; padding: 32px; border-radius: 8px; border-left: 4px solid var(--line-yellow); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .stars { color: var(--line-yellow); font-size: 1.2rem; margin-bottom: 12px; }
+        .review-text { font-style: italic; margin-bottom: 16px; color: #444; }
+        .review-author { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: var(--asphalt); }
+
+        .quote-bg { background: var(--tar-black); color: white; }
+        .quote-container { max-width: 650px; margin: 0 auto; }
+        .quote-form { background: var(--asphalt); padding: 40px; border-radius: 8px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-top: 32px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; color: var(--concrete); }
+        .form-control { width: 100%; padding: 14px; background: var(--tar-black); border: 1px solid #444; color: white; border-radius: 4px; font-family: inherit; font-size: 1rem; }
+
+        footer { background: #0F0D0A; color: #888; padding: 60px 0; text-align: center; border-top: 1px solid #222; font-size: 0.95rem; }
+        footer p { margin: 8px 0; }
+        footer a { color: var(--concrete); text-decoration: none; }
+
+        .mobile-dock {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--tar-black);
+            z-index: 999;
+            grid-template-columns: 1fr 1fr;
+            border-top: 2px solid var(--line-yellow);
+        }
+        .dock-btn { text-align: center; padding: 16px 8px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .dock-btn-call { background: var(--asphalt); color: var(--line-yellow); }
+        .dock-btn-wa { background: var(--whatsapp-green); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.3rem; }
+            .hero .sub { font-size: 1.1rem; }
+            section { padding: 60px 0; }
+            .hero-actions { display: flex; flex-direction: column; padding: 0 20px; }
+            .mobile-dock { display: grid; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="nav wrap">
+        <a href="#" class="brand">HOMEBOY <span>TAR-PAVE</span></a>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#quote">Get Quote</a>
+            <a href="tel:+27727424595" class="phone-nav">📞 072 742 4595</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="wrap">
+        <h1><span>5.0★</span> Tar Surfacing & Brick Paving</h1>
+        <p class="sub">Professional Residential, Commercial & Industrial Paving Across Greater Johannesburg</p>
+        <p class="badges">✓ Free Site Visits • ✓ Heavy Compaction • ✓ Weed-Free Guarantee</p>
+        <div class="hero-actions">
+            <a href="tel:+27727424595" class="btn">📞 Call 072 742 4595</a>
+            <a href="https://wa.me" target="_blank" class="btn btn-whatsapp">💬 WhatsApp For Quote</a>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="wrap">
+    <div class="section-head">
+        <h2>Our Specialities</h2>
+    </div>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Tar Surfacing</h3>
+            <p>Premium hot-mix asphalt solutions engineered for heavy traffic resilience, proper structural grading, and smooth water runoff management.</p>
+            <ul>
+                <li>Residential Driveways</li>
+                <li>Commercial Parking Lots</li>
+                <li>Industrial Yards</li>
+            </ul>
+        </div>
+        <div class="service-card" style="border-top-color: var(--clay-red);">
+            <h3>Brick Paving</h3>
+            <p>Precision-laid interlocking blocks and clay brick surfaces built on robust, deeply compacted bases to prevent uneven sagging.</p>
+            <ul>
+                <li>Interlocking Driveways</li>
+                <li>Courtyards & Patios</li>
+                <li>Walkways & Paths</li>
+            </ul>
+        </div>
+        <div class="service-card" style="border-top-color: var(--line-yellow);">
+            <h3>Repairs & Patching</h3>
