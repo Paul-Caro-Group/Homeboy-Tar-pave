@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Homeboy Tar-Pave | 5.0★ Tar Surfacing & Paving — Johannesburg</title>
+<meta name="description" content="Homeboy Tar-Pave: 5.0 star rated tar surfacing, brick paving, pothole repair and driveway specialists servicing Greater Johannesburg. Free quotes, heavy compaction, weed-free guarantee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tar-black:#17140F;
+  --asphalt:#2E2A24;
+  --asphalt-light:#3D382F;
+  --concrete:#E8E2D4;
+  --concrete-dim:#D8D0BC;
+  --sand-white:#F7F4EC;
+  --line-yellow:#E8A93B;
+  --line-yellow-dim:#c98f28;
+  --clay-red:#B5502D;
+  --clay-red-dark:#8f3e21;
+  --ink:#17140F;
+  --radius-sm:3px;
+  --radius-md:6px;
+  --maxw:1180px;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Work Sans',sans-serif;
+  color:var(--ink);
+  background:var(--sand-white);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+h1,h2,h3{
+  font-family:'Archivo Black',sans-serif;
+  font-weight:400;
+  line-height:1.08;
+  margin:0 0 .5em 0;
+  letter-spacing:-0.01em;
+}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.72rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--line-yellow-dim);
+  font-weight:600;
+  display:inline-block;
+  margin-bottom:0.9rem;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:3px solid var(--line-yellow);outline-offset:2px;
+}
+
+/* ---------- Lane-line divider (signature element) ---------- */
+.lane-divider{
+  height:14px;width:100%;
+  background-image:repeating-linear-gradient(
+    90deg, var(--line-yellow) 0px, var(--line-yellow) 46px,
+    transparent 46px, transparent 78px
+  );
+  background-position:center;background-repeat:repeat-x;
+  background-size:auto 4px;opacity:0.9;
+}
+.lane-divider.dark{opacity:0.55;}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:var(--tar-black);
+  border-bottom:1px solid rgba(232,169,59,0.25);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;max-width:var(--maxw);margin:0 auto;position:relative;
+}
+.brand{
+  color:var(--sand-white);font-family:'Archivo Black',sans-serif;
+  font-size:1.05rem;text-decoration:none;display:flex;align-items:center;gap:10px;
+}
+.brand .dot{width:10px;height:10px;background:var(--line-yellow);border-radius:50%;flex:none;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{color:var(--concrete-dim);text-decoration:none;font-size:0.92rem;font-weight:500;}
+.nav-links a:hover{color:var(--line-yellow);}
+.nav-cta{
+  background:var(--line-yellow);color:var(--tar-black);
+  padding:10px 18px;border-radius:var(--radius-sm);
+  font-weight:700;font-size:0.88rem;text-decoration:none;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--sand-white);}
+.burger{
+  display:none;background:none;border:0;color:var(--sand-white);
+  font-size:1.6rem;cursor:pointer;line-height:1;padding:8px;min-width:44px;min-height:44px;
+}
+
+/* Mobile nav drawer */
+.mobile-nav{
+  display:none;position:fixed;inset:0;z-index:90;background:rgba(23,20,15,0.7);
+}
+.mobile-nav.open{display:block;}
+.mobile-nav-panel{
+  position:absolute;top:0;right:0;height:100%;width:78%;max-width:320px;
+  background:var(--tar-black);padding:26px 24px;
+  display:flex;flex-direction:column;gap:6px;
+  border-left:1px solid rgba(232,169,59,0.3);
+}
+.mobile-nav-panel a{
+  color:var(--sand-white);text-decoration:none;font-size:1.05rem;font-weight:600;
+  padding:14px 6px;border-bottom:1px dashed rgba(232,169,59,0.2);
+}
+.mobile-nav-panel a.nav-cta{
+  background:var(--line-yellow);color:var(--tar-black);border-radius:var(--radius-sm);
+  text-align:center;margin-top:14px;border-bottom:none;padding:14px;
+}
+.mobile-nav-close{
+  align-self:flex-end;background:none;border:0;color:var(--sand-white);
+  font-size:1.8rem;cursor:pointer;min-width:44px;min-height:44px;
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--tar-black);color:var(--sand-white);padding:92px 0 76px;overflow:hidden;}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.045) 1px, transparent 1.6px);
+  background-size:11px 11px;opacity:0.9;pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;
+}
+.stars-row{
+  display:flex;align-items:center;gap:8px;margin-bottom:18px;flex-wrap:wrap;
+  font-family:'IBM Plex Mono',monospace;font-size:0.85rem;color:var(--concrete-dim);
+}
+.stars-row .stars{color:var(--line-yellow);letter-spacing:2px;font-size:1rem;}
+.hero h1{font-size:clamp(1.9rem,4.6vw,3.4rem);color:var(--sand-white);}
+.hero h1 span{color:var(--line-yellow);}
+.hero .sub{font-size:1.05rem;color:var(--concrete-dim);max-width:46ch;margin:18px 0 32px;}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 26px;
+  border-radius:var(--radius-sm);font-weight:700;font-size:0.98rem;text-decoration:none;
+  border:2px solid transparent;transition:transform .15s ease, background .15s ease;
+  min-height:48px;
+}
+.btn:active{transform:scale(0.98);}
+.btn-primary{background:var(--line-yellow);color:var(--tar-black);}
+.btn-primary:hover{background:#fff;}
+.btn-whatsapp{background:#25D366;color:#0b1a10;}
+.btn-whatsapp:hover{background:#3ee87e;}
+.btn-outline{background:transparent;color:var(--sand-white);border-color:rgba(247,244,236,0.35);}
+.btn-outline:hover{border-color:var(--line-yellow);color:var(--line-yellow);}
+
+.hero-stat-card{background:var(--asphalt);border:1px solid rgba(232,169,59,0.3);border-radius:var(--radius-md);padding:26px;}
+.hero-stat-card .big{font-family:'Archivo Black',sans-serif;font-size:2.6rem;color:var(--line-yellow);line-height:1;}
+.hero-stat-card .label{font-size:0.85rem;color:var(--concrete-dim);margin-top:6px;}
+.hero-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+.hero-stat-grid .mini{border-top:1px dashed rgba(232,169,59,0.35);padding-top:12px;}
+.hero-stat-grid .mini .n{font-family:'IBM Plex Mono',monospace;font-size:1.15rem;color:var(--sand-white);font-weight:600;}
+.hero-stat-grid .mini .l{font-size:0.76rem;color:var(--concrete-dim);}
+
+/* ---------- Trust strip ---------- */
+.trust-strip{background:var(--concrete);padding:22px 0;border-bottom:1px solid var(--concrete-dim);}
+.trust-strip .wrap{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center;}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:600;color:var(--asphalt);}
+.trust-item .ic{color:var(--clay-red);font-size:1.1rem;}
+
+/* ---------- Section shell ---------- */
+section.section{padding:80px 0;}
+.section-head{max-width:640px;margin-bottom:48px;}
+.section-head h2{font-size:clamp(1.6rem,3vw,2.3rem);}
+.section-head p{color:var(--asphalt);opacity:0.75;font-size:1.02rem;max-width:56ch;}
+
+/* ---------- Services ---------- */
+.services-bg{background:var(--sand-white);}
+.two-col-services{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:36px;}
+.service-card{background:var(--tar-black);color:var(--sand-white);border-radius:var(--radius-md);padding:34px;position:relative;border:1px solid rgba(0,0,0,0.05);}
+.service-card.paving{background:var(--clay-red-dark);}
+.service-card .tag{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--line-yellow);margin-bottom:10px;display:block;}
+.service-card.paving .tag{color:#f3c9a8;}
+.service-card h3{font-size:1.45rem;color:var(--sand-white);}
+.service-card p{color:rgba(247,244,236,0.82);font-size:0.96rem;margin-bottom:18px;}
+.service-card ul{list-style:none;margin:0 0 20px;padding:0;}
+.service-card li{padding:8px 0 8px 22px;position:relative;font-size:0.92rem;border-top:1px dashed rgba(247,244,236,0.18);color:rgba(247,244,236,0.9);}
+.service-card li:first-child{border-top:none;}
+.service-card li::before{content:"—";position:absolute;left:0;color:var(--line-yellow);}
+.service-card.paving li::before{color:#f3c9a8;}
+.card-link{color:var(--line-yellow);font-weight:700;text-decoration:none;font-size:0.9rem;display:inline-flex;align-items:center;gap:6px;padding:6px 0;}
+.service-card.paving .card-link{color:#f3c9a8;}
+
+.also-services{background:var(--concrete);border-radius:var(--radius-md);padding:34px;}
+.also-services h4{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--asphalt);margin-bottom:18px;}
+.chip-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.chip{background:var(--sand-white);border:1px solid var(--concrete-dim);padding:9px 16px;border-radius:20px;font-size:0.86rem;font-weight:600;color:var(--asphalt);}
+
+/* ---------- Trust / social proof section ---------- */
+.proof-bg{background:var(--tar-black);color:var(--sand-white);}
+.proof-bg .section-head p{color:var(--concrete-dim);}
+.proof-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:44px;align-items:start;}
+.review-card{background:var(--asphalt);border-radius:var(--radius-md);padding:24px;margin-bottom:16px;border-left:3px solid var(--line-yellow);}
+.review-stars{color:var(--line-yellow);letter-spacing:2px;font-size:0.95rem;margin-bottom:10px;}
+.review-card p{font-size:0.95rem;color:var(--concrete-dim);margin:0 0 10px;}
+.review-name{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--sand-white);}
+
+.footprint-card{background:var(--asphalt);border-radius:var(--radius-md);padding:30px;}
+.footprint-card h4{font-family:'Archivo Black',sans-serif;font-size:1.1rem;margin-bottom:16px;color:var(--sand-white);}
+.suburb-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.suburb-grid span{font-size:0.9rem;padding:9px 0;border-top:1px dashed rgba(232,169,59,0.3);color:var(--concrete-dim);}
+.suburb-grid span:nth-child(-n+2){border-top:none;}
+
+/* ---------- Quote form ---------- */
+.quote-bg{background:var(--concrete);}
+.quote-wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:start;}
+.quote-side h2{font-size:clamp(1.6rem,3vw,2.2rem);}
+.quote-side p{color:var(--asphalt);opacity:0.8;margin-bottom:22px;}
+.side-point{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start;}
+.side-point .ic{width:30px;height:30px;flex:none;border-radius:50%;background:var(--clay-red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;}
+.side-point div{font-size:0.92rem;color:var(--asphalt);}
+.side-point strong{display:block;font-size:0.95rem;margin-bottom:2px;}
+
+form.quote-form{background:var(--sand-white);border-radius:var(--radius-md);padding:28px;box-shadow:0 18px 40px rgba(23,20,15,0.08);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:0.82rem;font-weight:600;margin-bottom:6px;color:var(--asphalt);}
+.field label .req{color:var(--clay-red);}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 14px;border:1.5px solid var(--concrete-dim);
+  border-radius:var(--radius-sm);font-family:'Work Sans',sans-serif;font-size:1rem;
+  background:#fff;color:var(--ink);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--line-yellow);outline-offset:1px;border-color:var(--line-yellow);}
+.field textarea{resize:vertical;min-height:80px;}
+.radio-tiles{display:flex;gap:10px;flex-wrap:wrap;}
+.radio-tiles input{position:absolute;opacity:0;width:1px;height:1px;}
+.radio-tiles label{border:1.5px solid var(--concrete-dim);border-radius:var(--radius-sm);padding:11px 16px;font-size:0.86rem;font-weight:600;cursor:pointer;margin:0;background:#fff;min-height:44px;display:flex;align-items:center;}
+.radio-tiles input:checked + label{border-color:var(--clay-red);background:var(--clay-red);color:#fff;}
+.radio-tiles input:focus-visible + label{outline:3px solid var(--line-yellow);outline-offset:2px;}
+.submit-btn{width:100%;background:var(--clay-red);color:#fff;border:none;padding:16px;border-radius:var(--radius-sm);font-weight:700;font-size:1rem;cursor:pointer;font-family:'Work Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;}
+.submit-btn:hover{background:var(--clay-red-dark);}
+.form-note{font-size:0.78rem;color:var(--asphalt);opacity:0.65;margin-top:10px;text-align:center;}
+
+/* ---------- Footer ---------- */
+footer{background:var(--tar-black);color:var(--concrete-dim);padding:52px 0 26px;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;margin-bottom:36px;}
+.footer-brand{font-family:'Archivo Black',sans-serif;color:var(--sand-white);font-size:1.1rem;margin-bottom:10px;}
+footer h5{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--line-yellow);margin-bottom:14px;}
+footer ul{list-style:none;padding:0;margin:0;}
+footer li{margin-bottom:9px;font-size:0.9rem;}
+footer a{text-decoration:none;color:var(--concrete-dim);}
+footer a:hover{color:var(--line-yellow);}
+.footer-bottom{border-top:1px solid rgba(232,169,59,0.15);padding-top:20px;font-size:0.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-legal-links{display:flex;gap:16px;flex-wrap:wrap;}
+.footer-legal-links button{background:none;border:0;color:var(--concrete-dim);font-size:0.8rem;cursor:pointer;padding:0;font-family:'Work Sans',sans-serif;text-decoration:underline;}
+.footer-legal-links button:hover{color:var(--line-yellow);}
+
+/* ---------- Floating WhatsApp ---------- */
+.float-wa{
+  position:fixed;bottom:22px;right:22px;z-index:70;
+  background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,0.3);
+}
+
+/* ================= COOKIE BANNER ================= */
+.cookie-banner{
+  position:fixed;left:16px;right:16px;bottom:16px;z-index:120;
+  max-width:640px;margin:0 auto;
+  background:var(--tar-black);color:var(--sand-white);
+  border:1px solid rgba(232,169,59,0.35);border-radius:var(--radius-md);
+  padding:22px 24px;box-shadow:0 18px 50px rgba(0,0,0,0.35);
+  display:none;
+}
+.cookie-banner.show{display:block;animation:cookieUp .35s ease;}
+@keyframes cookieUp{from{transform:translateY(24px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.cookie-banner p{font-size:0.88rem;color:var(--concrete-dim);margin:0 0 14px;}
+.cookie-banner a{color:var(--line-yellow);text-decoration:underline;}
+.cookie-actions{display:flex;flex-wrap:wrap;gap:10px;}
+.cookie-actions button{
+  border-radius:var(--radius-sm);font-weight:700;font-size:0.85rem;padding:11px 16px;
+  cursor:pointer;border:2px solid transparent;font-family:'Work Sans',sans-serif;min-height:44px;
+}
+.ck-accept{background:var(--line-yellow);color:var(--tar-black);}
+.ck-accept:hover{background:#fff;}
+.ck-reject{background:transparent;border-color:rgba(247,244,236,0.35);color:var(--sand-white);}
+.ck-reject:hover{border-color:var(--line-yellow);color:var(--line-yellow);}
+.ck-manage{background:transparent;color:var(--concrete-dim);text-decoration:underline;border:none;padding:11px 4px;}
+
+.cookie-modal-overlay{
+  position:fixed;inset:0;z-index:130;background:rgba(23,20,15,0.72);
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.cookie-modal-overlay.show{display:flex;}
+.cookie-modal{
+  background:var(--sand-white);border-radius:var(--radius-md);max-width:520px;width:100%;
+  max-height:88vh;overflow-y:auto;padding:30px;
+}
+.cookie-modal h3{font-family:'Archivo Black',sans-serif;font-size:1.3rem;margin-bottom:6px;}
+.cookie-modal > p{font-size:0.9rem;color:var(--asphalt);opacity:0.8;margin-bottom:22px;}
+.ck-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px 0;border-top:1px dashed var(--concrete-dim);}
+.ck-row:first-of-type{border-top:none;}
+.ck-row-text strong{display:block;font-size:0.96rem;margin-bottom:4px;}
+.ck-row-text span{font-size:0.85rem;color:var(--asphalt);opacity:0.75;}
+.ck-toggle{position:relative;width:46px;height:26px;flex:none;}
+.ck-toggle input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer;}
+.ck-toggle .track{position:absolute;inset:0;background:var(--concrete-dim);border-radius:20px;transition:background .15s ease;}
+.ck-toggle .thumb{position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .15s ease;box-shadow:0 1px 3px rgba(0,0,0,0.3);}
+.ck-toggle input:checked + .track{background:var(--clay-red);}
+.ck-toggle input:checked + .track .thumb{transform:translateX(20px);}
+.ck-toggle input:checked ~ .thumb{transform:translateX(20px);}
+.ck-toggle input:disabled ~ .track{background:var(--asphalt);opacity:0.4;}
+.cookie-modal-actions{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap;}
+.cookie-modal-actions button{flex:1;min-width:140px;border-radius:var(--radius-sm);font-weight:700;font-size:0.9rem;padding:13px;cursor:pointer;border:2px solid transparent;min-height:46px;}
+.ck-save{background:var(--clay-red);color:#fff;}
+.ck-save:hover{background:var(--clay-red-dark);}
+.ck-close{background:transparent;border-color:var(--concrete-dim);color:var(--asphalt);}
+
+/* ---------- Responsive ---------- */
+@media (max-width:920px){
+  .hero-inner{grid-template-columns:1fr;}
+  .two-col-services{grid-template-columns:1fr;}
+  .proof-grid{grid-template-columns:1fr;}
+  .quote-wrap{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:680px){
+  .nav-links{display:none;}
+  .burger{display:block;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero{padding:44px 0 36px;}
+  section.section{padding:48px 0;}
+  .trust-strip .wrap{gap:14px;justify-content:flex-start;}
+  .trust-item{font-size:0.82rem;}
+  .wrap{padding:0 18px;}
+  .nav{padding:12px 18px;}
+  .btn{width:100%;justify-content:center;}
+  .cta-row{flex-direction:column;}
+  .hero-stat-grid{grid-template-columns:1fr 1fr;}
+  .float-wa{width:52px;height:52px;bottom:16px;right:16px;font-size:1.4rem;}
+  .cookie-banner{left:10px;right:10px;bottom:10px;padding:18px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+  .service-card,.also-services,form.quote-form,.footprint-card{padding:24px;}
+}
+@media (max-width:380px){
+  .hero-stat-grid{grid-template-columns:1fr;}
+  .cookie-actions{flex-direction:column;}
+  .cookie-actions button{width:100%;}
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .cookie-banner.show{animation:none;}
+  *{transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand"><span class="dot"></span> HOMEBOY TAR-PAVE</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#quote">Get a Quote</a>
+      <a href="tel:+27727424595" class="mono">072 742 4595</a>
+    </div>
+    <a href="#quote" class="nav-cta" style="margin-left:16px;">Free Quote</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">☰</button>
+  </nav>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">×</button>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#quote">Get a Quote</a>
+    <a href="tel:+27727424595">📞 072 742 4595</a>
+    <a href="https://wa.me/27727424595" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+    <a href="#quote" class="nav-cta">Free Quote</a>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="stars-row"><span class="stars">★★★★★</span> 5.0 on Google Maps · Greater Johannesburg</div>
+      <h1>Johannesburg's <span>5.0-Star</span> Tar Surfacing &amp; Paving Specialists</h1>
+      <p class="sub">From weed-free driveways in Sandton to heavy-duty industrial tar for factory yards in Germiston — Homeboy Tar-Pave delivers heavy-compaction surfacing that lasts. Free, no-obligation quotes, every time.</p>
+      <div class="cta-row">
+        <a href="tel:+27727424595" class="btn btn-primary">📞 Call Now</a>
+        <a href="https://wa.me/27727424595?text=Hi%20Homeboy%20Tar-Pave%2C%20I%27d%20like%20a%20free%20quote%20for%20tar%2Fpaving%20work." class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp for a Free Quote</a>
+      </div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="big">5.0<span style="font-size:1.2rem;">★</span></div>
+      <div class="label">Google Maps Rating — 100% verified local reviews</div>
+      <div class="hero-stat-grid">
+        <div class="mini"><div class="n">R0</div><div class="l">Cost to get a quote</div></div>
+        <div class="mini"><div class="n">Gauteng</div><div class="l">Service footprint</div></div>
+        <div class="mini"><div class="n">Heavy</div><div class="l">Compaction standard</div></div>
+        <div class="mini"><div class="n">Weed-Free</div><div class="l">Surface guarantee</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="lane-divider"></div>
+
+<!-- ================= TRUST STRIP ================= -->
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><span class="ic">★</span> 5.0 Google Rating</div>
+    <div class="trust-item"><span class="ic">✓</span> Free, No-Obligation Quotes</div>
+    <div class="trust-item"><span class="ic">⛏</span> Heavy Compaction Standard</div>
+    <div class="trust-item"><span class="ic">🌿</span> Weed-Free Surface Guarantee</div>
+    <div class="trust-item"><span class="ic">📍</span> Based in Yeoville, JHB</div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section class="section services-bg" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Lay</span>
+      <h2>Two Surfaces. One Standard of Finish.</h2>
+      <p>Whether it's a full tar driveway or a decorative brick-paved entrance, every Homeboy Tar-Pave job starts with the same non-negotiable: proper site prep and heavy compaction, so it doesn't crack, sink, or sprout weeds within a year.</p>
+    </div>
+
+    <div class="two-col-services">
+      <div class="service-card">
+        <span class="tag">Tar Surfacing</span>
+        <h3>Residential &amp; Industrial Tar</h3>
+        <p>Durable blacktop for driveways, parking areas and factory yards — engineered to carry daily vehicle and foot traffic across Johannesburg's clay-heavy soils.</p>
+        <ul>
+          <li>Residential driveway tarring</li>
+          <li>Industrial &amp; commercial yards</li>
+          <li>Re-surfacing of worn tar</li>
+          <li>Pothole repairs &amp; patching</li>
+          <li>Road markings &amp; speed humps</li>
+        </ul>
+        <a href="#quote" class="card-link">Get a tar quote →</a>
+      </div>
+
+      <div class="service-card paving">
+        <span class="tag">Brick Paving</span>
+        <h3>Domestic &amp; Commercial Paving</h3>
+        <p>Interlocking brick paving for driveways, patios, walkways and commercial forecourts — laid on a properly compacted base so it stays level, not loose underfoot.</p>
+        <ul>
+          <li>Domestic driveways &amp; patios</li>
+          <li>Commercial forecourts &amp; walkways</li>
+          <li>Laying of kerbs &amp; edging</li>
+          <li>Site clearance &amp; levelling</li>
+          <li>Waterproofing</li>
+        </ul>
+        <a href="#quote" class="card-link">Get a paving quote →</a>
+      </div>
+    </div>
+
+    <div class="also-services">
+      <h4>Also On Site</h4>
+      <div class="chip-grid">
+        <span class="chip">Parking Areas</span>
+        <span class="chip">Site Clearance</span>
+        <span class="chip">Kerbing</span>
+        <span class="chip">Speed Humps</span>
+        <span class="chip">Road Markings</span>
+        <span class="chip">Waterproofing</span>
+        <span class="chip">Driveway Patching</span>
+        <span class="chip">Pothole Repairs</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="lane-divider dark"></div>
+
+<!-- ================= SOCIAL PROOF ================= -->
+<section class="section proof-bg" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Trusted Across Gauteng</span>
+      <h2>A 5.0-Star Rating Isn't Luck. It's Every Job.</h2>
+      <p>We work on referrals and repeat business from Johannesburg homeowners, body corporates and property managers — which means every driveway, yard and parking area has to hold up long after we've left site.</p>
+    </div>
+
+    <div class="proof-grid">
+      <div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Compaction was clearly done properly — no cracks or dips six months later. Fair price, arrived when they said they would."</p>
+          <div class="review-name">— Homeowner, Randburg</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Used them for our parking area re-surfacing. Minimal disruption to tenants and the finish looks brand new."</p>
+          <div class="review-name">— Property Manager, Sandton</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Paving still weed-free a year on, which is more than I can say for the last contractor we used."</p>
+          <div class="review-name">— Homeowner, Roodepoort</div>
+        </div>
+      </div>
+
+      <div class="footprint-card">
+        <h4>Servicing Greater Johannesburg</h4>
+        <p style="font-size:0.9rem;color:var(--concrete-dim);margin-bottom:16px;">Based at 50 Hunter St, Yeoville — working across the greater metro, including:</p>
+        <div class="suburb-grid">
+          <span>Sandton</span><span>Randburg</span>
+          <span>Roodepoort</span><span>Midrand</span>
+          <span>Germiston</span><span>Bedfordview</span>
+          <span>Kempton Park</span><span>Soweto</span>
+          <span>Boksburg</span><span>Alberton</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="lane-divider"></div>
+
+<!-- ================= QUOTE FORM ================= -->
+<section class="section quote-bg" id="quote">
+  <div class="wrap">
+    <div class="quote-wrap">
+      <div class="quote-side">
+        <span class="eyebrow">Free Quote — No Obligation</span>
+        <h2>Tell Us What You're Working With</h2>
+        <p>Two minutes on your phone gets a real quote back — not a call centre script. The more detail you give us on size and location, the more accurate your first quote will be.</p>
+
+        <div class="side-point">
+          <div class="ic">1</div>
+          <div><strong>We size it up from your numbers</strong>Rough square meterage is fine — we confirm on-site before any work starts.</div>
+        </div>
+        <div class="side-point">
+          <div class="ic">2</div>
+          <div><strong>You get a straight answer</strong>No inflated call-out quotes. What we quote is what we charge.</div>
+        </div>
+        <div class="side-point">
+          <div class="ic">3</div>
+          <div><strong>Prefer WhatsApp?</strong>Skip the form and message us directly on <a href="https://wa.me/27727424595" target="_blank" rel="noopener" style="color:var(--clay-red);font-weight:700;">072 742 4595</a>.</div>
+        </div>
+      </div>
+
+      <form class="quote-form" id="quoteForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="qf-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="qf-name" name="name" required placeholder="e.g. Thabo Mahlangu">
+          </div>
+          <div class="field">
+            <label for="qf-phone">Phone / WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="qf-phone" name="phone" required placeholder="072 000 0000">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>What do you need done? <span class="req">*</span></label>
+          <div class="radio-tiles">
+            <input type="radio" id="svc-tar" name="service" value="Tar Surfacing" required><label for="svc-tar">Tar Surfacing</label>
+            <input type="radio" id="svc-paving" name="service" value="Brick Paving"><label for="svc-paving">Brick Paving</label>
+            <input type="radio" id="svc-repair" name="service" value="Pothole / Repair"><label for="svc-repair">Pothole / Repair</label>
+            <input type="radio" id="svc-other" name="service" value="Other"><label for="svc-other">Other</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="qf-area">Approx. Surface Area (m²) <span class="req">*</span></label>
+            <input type="number" id="qf-area" name="area" min="1" required placeholder="e.g. 45" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="qf-proptype">Property Type</label>
+            <select id="qf-proptype" name="propertyType">
+              <option>Residential</option>
+              <option>Commercial / Industrial</option>
+              <option>Body Corporate / Complex</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="qf-location">Suburb / Area <span class="req">*</span></label>
+          <input type="text" id="qf-location" name="location" required placeholder="e.g. Sandton, Johannesburg">
+        </div>
+
+        <div class="field">
+          <label for="qf-notes">Anything else we should know?</label>
+          <textarea id="qf-notes" name="notes" placeholder="e.g. site access, current surface condition, timeline"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">💬 Send via WhatsApp for a Free Quote</button>
+        <p class="form-note">We reply within business hours. No spam, no call centre. See our <a href="privacy-policy.html" style="color:var(--clay-red);">Privacy Policy</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">HOMEBOY TAR-PAVE</div>
+        <p style="font-size:0.9rem;max-width:34ch;">5.0-star tar surfacing and brick paving contractor servicing Greater Johannesburg. Free quotes, heavy compaction, weed-free guarantee.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>📍 50 Hunter St, Yeoville, Johannesburg, 2198</li>
+          <li>📞 <a href="tel:+27727424595">072 742 4595</a></li>
+          <li>💬 <a href="https://wa.me/27727424595" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Tar Surfacing</a></li>
+          <li><a href="#services">Brick Paving</a></li>
+          <li><a href="#services">Pothole Repairs</a></li>
+          <li><a href="#quote">Free Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Homeboy Tar-Pave. All rights reserved.</span>
+      <div class="footer-legal-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        <button type="button" class="open-cookie-settings">Cookie Settings</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/27727424595?text=Hi%20Homeboy%20Tar-Pave%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener" aria-label="WhatsApp us">💬</a>
+
+<script>
+  // Mobile nav drawer
+  var burgerBtn = document.getElementById('burgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileNavClose = document.getElementById('mobileNavClose');
+
+  function openMobileNav(){
+    mobileNav.classList.add('open');
+    burgerBtn.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+  }
+  function closeMobileNav(){
+    mobileNav.classList.remove('open');
+    burgerBtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  }
+  burgerBtn.addEventListener('click', openMobileNav);
+  mobileNavClose.addEventListener('click', closeMobileNav);
+  mobileNav.addEventListener('click', function(e){ if(e.target === mobileNav) closeMobileNav(); });
+  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobileNav); });
+
+  // Quote form -> WhatsApp deep link
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const name = f.get('name') || '';
+    const phone = f.get('phone') || '';
+    const service = f.get('service') || 'Not specified';
+    const area = f.get('area') || 'Not specified';
+    const propertyType = f.get('propertyType') || '';
+    const location = f.get('location') || '';
+    const notes = f.get('notes') || '';
+
+    const msg = `Hi Homeboy Tar-Pave, I'd like a free quote:%0A`
+      + `Name: ${name}%0A`
+      + `Phone: ${phone}%0A`
+      + `Service: ${service}%0A`
+      + `Area: ${area} m²%0A`
+      + `Property type: ${propertyType}%0A`
+      + `Location: ${location}%0A`
+      + `Notes: ${notes}`;
+
+    window.open(`https://wa.me/27727424595?text=${msg}`, '_blank');
+  });
+</script>
+<script src="assets/cookie-consent.js"></script>
+
+</body>
+</html>
